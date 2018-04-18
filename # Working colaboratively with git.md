@@ -138,4 +138,72 @@ This task can be done on your own but it does require that you have completed th
 
 Open helloworld.txt that you create back in step 4 of this workshop. Despite the changes that were made to this file during the pair work, the copy of this file stored locally on your laptop won't have any of these changes in it so it should just contain one line 'Hello World!'. This is because we haven't pulled those changes from the github repository yet (we won't do it now as this will prevent us from getting the merge conflict).
 Edit helloworld.txt by adding `I'm making a merge conflict!` on a new line, then add and commit the change as before. 
-Now when you try to do `git push origin` you should see this:
+Now when you try to do `git push origin master` you should see this:
+```
+To https://github.com/Jameswhale/git-introduction.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/Jameswhale/git-introduction.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+This is telling you that there are some changes on the remote master branch that aren't on your local master branch. To solve this we need to pull those changes down to our local branch you do this with `git pull`
+You shoud see something like this:
+
+```
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 4 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+From https://github.com/Jameswhale/git-introduction
+   f6361e6..4246770  master     -> origin/master
+Auto-merging test.txt
+CONFLICT (content): Merge conflict in test.txt
+Automatic merge failed; fix conflicts and then commit the result.
+``` 
+This tells us that there was a merge conflict,  git was unable to resolve it automatically and that we will have to fix it manually. 
+To fix the confict we will need to open the file and work out what the conflict is:
+```
+Hello World!
+<<<<<<< HEAD
+I'm making a merge conflict!
+=======
+hello to you too
+>>>>>>> 4246770bb7045b30e70b7e512079aecad87dcaad
+```
+This looks a bit confusing so what does it mean?
+```
+<<<<<<< HEAD
+I'm making a merge conflict!
+```
+This is the change you just made. HEAD is the current position on your branch.
+```
+hello to you too
+>>>>>>> 4246770bb7045b30e70b7e512079aecad87dcaad
+```
+This is the change made on the remote branch. The long string of numbers and letters is the unique identifer for the commit, so we don't need to pay attention to it now. `=======` is just a divider between the two commits. 
+
+The content of the merge conflict will influence how we resolve the conflict. We might want to keep both lines, we might want to keep one, not the other, or we might need to combline the two lines in some way. To keep it simple in this example we will keep both lines, your local change first then the remote change second. To do this we will delete these three lines: 
+```
+<<<<<<< HEAD
+=======
+>>>>>>> 4246770bb7045b30e70b7e512079aecad87dcaad
+```
+So that the file now looks like this:
+```
+Hello World!
+I'm making a merge conflict!
+hello to you too
+```
+Save the file and then use `git add` and `git commit` to complete the merge.
+If you use the `git status` comand now it should return something like this:
+```
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+```
+The two commits are our original commit and the commit we made when fixing the merge conflict. We can now push these commits as normal.
