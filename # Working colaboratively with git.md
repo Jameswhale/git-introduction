@@ -133,10 +133,10 @@ Back on the 'Conversation' tab you should now see a green button 'Merge pull req
 Now that you have successfully made and updated a pull request, swap roles with your partner and repeat steps 7-14 so they can try making the pull request and you can try reviewing one. 
 
 ## 16. Merge conflicts
-Now that there has been multiple developers working on your repository you are in a position to create and resolve a merge conflict.
+Now that there have been multiple developers working on your repository you are in a position to create and resolve a merge conflict.
 This task can be done on your own but it does require that you have completed the pair work beforehand for it to work.
 
-Open helloworld.txt that you create back in step 4 of this workshop. Despite the changes that were made to this file during the pair work, the copy of this file stored locally on your laptop won't have any of these changes in it so it should just contain one line 'Hello World!'. This is because we haven't pulled those changes from the github repository yet (we won't do it now as this will prevent us from getting the merge conflict).
+Open helloworld.txt that you created back in step 4 of this workshop. Despite the changes that were made to this file during the pair work, the copy of this file stored locally on your laptop won't have any of these changes in it so it should just contain one line 'Hello World!'. This is because we haven't pulled those changes from the GitHub repository yet (we won't do it now as this will prevent us from getting the merge conflict).
 Edit helloworld.txt by adding `I'm making a merge conflict!` on a new line, then add and commit the change as before. 
 Now when you try to do `git push origin master` you should see this:
 ```
@@ -149,8 +149,8 @@ hint: to the same ref. You may want to first integrate the remote changes
 hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
-This is telling you that there are some changes on the remote master branch that aren't on your local master branch. To solve this we need to pull those changes down to our local branch you do this with `git pull`
-You shoud see something like this:
+This is telling you that there are some changes on the remote master branch that aren't on your local master branch. To solve this we need to pull those changes down to our local branch. You do this with `git pull`
+You should see something like this:
 
 ```
 remote: Counting objects: 4, done.
@@ -185,7 +185,7 @@ hello to you too
 ```
 This is the change made on the remote branch. The long string of numbers and letters is the unique identifer for the commit, so we don't need to pay attention to it now. `=======` is just a divider between the two commits. 
 
-The content of the merge conflict will influence how we resolve the conflict. We might want to keep both lines, we might want to keep one, not the other, or we might need to combline the two lines in some way. To keep it simple in this example we will keep both lines, your local change first then the remote change second. To do this we will delete these three lines: 
+The content of the merge conflict will influence how we resolve the conflict. We might want to keep both lines, we might want to keep one, not the other, or we might need to combine the two lines in some way. To keep it simple in this example we will keep both lines, your local change first then the remote change second. To do this we will delete these three lines: 
 ```
 <<<<<<< HEAD
 =======
