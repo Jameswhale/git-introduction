@@ -10,6 +10,11 @@ git clone < paste the URL here >
 ``` 
 Once the repository has downloaded there should be a new directory there with the name of your repository.
 
+When you have downloaded the repository use the command line to navigate into that directory using the `cd` command. 
+```
+cd myname-git-into
+```
+
 ## 3. Make a new file
 Next you are going to add a new file to our repo. There are lots of ways to do this but here is an easy way:
 ```
