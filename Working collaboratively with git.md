@@ -18,9 +18,9 @@ cd myname-git-into
 ## 3. Make a new file
 Next you are going to add a new file to our repo. There are lots of ways to do this but here is an easy way:
 ```
-echo "Hello World!" > helloworld.txt
+echo "Hello World! " > helloworld.txt
 ```
-This will create a new .txt file with `Hello World!` in it.
+This will create a new .txt file with `Hello World! ` in it.
 
 ## 4. Adding a new file
 Now you have created a new file you need to add it to your repository. First let's see what creating that new file has done to your branch. By typing `git status` you can see the status of your branch. Doing this now will return something like this:
