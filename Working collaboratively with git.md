@@ -108,17 +108,23 @@ You can then push the commit using `git push origin master` and you are then rea
 
 ## 12. Make a pull request to their repository
 Go back to GitHub and go to your partner's repository and click on the 'Code' tab. Find and click the button on the left-hand side titled 'New pull request', this opens the page where you can make a pull request. 
+
 First you will need to click on the link 'compare across forks' so you can compare your version of the repository with theirs. In the middle of the page you should now see four dropdown menus 'base fork', 'base', 'head fork', and 'compare'. The base fork should be populated with your partner's version of the repository `their name/repository name` and the base populated with `master`. For the head fork you should be able to select your version of the repository from the dropdown: `your name/repository name`. Compare should also be set to `master`. 
+
 As you do this you should see the frame in the middle of the page change to a text field and a larger text frame below it. You may notice that the text field is already populated with the message we made when we our commit. The text box is for adding additional longer commit messages.
+
 Below the text box the page will show a comparison showing all the commits in this pull request and also shows all the changes to files that will be made. Here you should be able to see the change we made to the helloworld.txt file. Once you're happy with the content of the pull request hit the 'Create pull request' button. Once again we will deliberately ignore the mistake in the file.
 
 
 ## 13. Review the pull request
 Now that the pull request has been made it's over to your partner to review the change, and to decide if it should be approved and merged into the repository.
+
 To do this they should go to the repository on their GitHub page and click on the 'Pull request' tab. There they will see the pull request you just made. They can see the commit message you wrote, the commit you made and the files you changed and they can now review your pull request. So now over to your partner to review your code!
 
 As the reviewer it is your responsibity to check the content of the pull request and spot any mistakes or to suggest improvements etc.
+
 Now because you are an eagle-eyed developer(!) you will have surely spotted the typo that your partner made in the helloworld file. So now we have to inform them of their mistake by leaving a comment on the pull request or even better on the file (and even the line) of the error. To do this mouse over the line where their error is just to the right of the line number. A blue cross should appear, clicking it will bring up a text box where you can explain the error. Once you have finished reviewing all the files in the pull request you then need to decide if it should be merged or not.
+
 Considering the errors in the helloworld file we definitely don't want to merge this change to our repository, therefore we will  click on the 'Review changes' drop down on the 'file changes' tab and select 'request changes'. 
 This will reject the pull request and notify your partner that is was rejected. 
 
